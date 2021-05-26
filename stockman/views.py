@@ -73,7 +73,7 @@ def add_product(request):
 
 @require_GET
 def get_products(request):
-    r = Products.objects.all().select_related("category")
+    r = Products.objects.select_related("category")
     data = serializers.serialize("json", r)
     print(data)
 
