@@ -19,7 +19,6 @@ def add_category(request):
 @require_GET
 def get_categories(request):
     r = Categories.objects.all()
-    r = r.products_set.all()
     data = serializers.serialize("json", r)
     print(type(data))
 
